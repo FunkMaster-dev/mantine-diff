@@ -2,7 +2,7 @@ import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
 import type { Preview } from '@storybook/react';
 import React, { useEffect } from 'react';
-import { useGlobals } from 'storybook/preview-api';
+import { useGlobals } from '@storybook/preview-api';
 
 const preview: Preview = {
   parameters: {
