@@ -25,15 +25,15 @@ export interface PackageData {
 }
 
 export const PACKAGE_DATA: PackageData = {
-  packageName: 'mantine-extension-template',
+  packageName: 'mantine-diff',
   packageDescription:
     'A template for mantine extensions, includes full setup for package development and documentation',
   mdxFileUrl:
-    'https://github.com/rtivital/mantine-extension-template/blob/master/docs/pages/index.mdx',
-  repositoryUrl: 'https://github.com/rtivital/mantine-extension-template',
-  licenseUrl: 'https://github.com/rtivital/mantine-extension-template/blob/master/LICENSE',
+    'https://github.com/FunkMaster-dev/mantine-diff/blob/master/docs/pages/index.mdx',
+  repositoryUrl: 'https://github.com/FunkMaster-dev/mantine-diff',
+  licenseUrl: 'https://github.com/FunkMaster-dev/mantine-diff/blob/master/LICENSE',
   author: {
-    name: 'Vitaly Rtishchev',
-    githubUsername: 'rtivital',
+    name: 'Boaz Geller',
+    githubUsername: 'FunkMaster-dev',
   },
 };

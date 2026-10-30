@@ -1,11 +1,11 @@
 {
-  "name": "mantine-extension-template",
+  "name": "mantine-diff",
   "version": "0.2.2",
   "description": "A template for Mantine extensions",
-  "homepage": "https://github.com/rtivital/mantine-extension-template#readme",
+  "homepage": "https://github.com/FunkMaster-dev/mantine-diff#readme",
   "packageManager": "yarn@4.0.1",
   "license": "MIT",
-  "author": "Vitaly Rtishchev <rtivital@gmail.com>",
+  "author": "Boaz Geller",
   "keywords": [
     "extension",
     "mantine"
@@ -34,5 +34,5 @@
     "react": "^18.x || ^19.x",
     "react-dom": "^18.x || ^19.x"
   },
-  "bugs": "https://github.com/rtivital/extension-template/issues"
+  "bugs": "https://github.com/FunkMaster-dev/mantine-diff/issues"
 }
