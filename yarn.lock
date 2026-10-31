@@ -2904,21 +2904,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tabler/icons-react@npm:^3.33.0":
-  version: 3.33.0
-  resolution: "@tabler/icons-react@npm:3.33.0"
+"@tabler/icons-react@npm:^3.50.0":
+  version: 3.50.0
+  resolution: "@tabler/icons-react@npm:3.50.0"
   dependencies:
-    "@tabler/icons": "npm:3.33.0"
+    "@tabler/icons": "npm:3.50.0"
   peerDependencies:
     react: ">= 16"
-  checksum: 10c0/1b3eac2a5029ed1509f521c17eb35ce7c0b125a76b7eb58a50d123ae6a888e0538a179f192ae38ed9988fc1b775334482bfb4722976e2208d97ae8bbb689ddf7
+  checksum: 10c0/5c5b7293c8df91e66c2fce515b7894f00ac94b4ef230f66d42b6eaf97caa9871e31a14157bb1e681894055eaf572fe34ccf8750ba262baa48736a3fc7f39df9f
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:3.33.0":
-  version: 3.33.0
-  resolution: "@tabler/icons@npm:3.33.0"
-  checksum: 10c0/c31a1eb5a018b81b540715635a556bf7324fe71c2ec2c09dd4f2e9655e2339060865eb2672deb9c05ee1898b79a21116a76194b6c6156df7bf54682323b613ac
+"@tabler/icons@npm:3.50.0":
+  version: 3.50.0
+  resolution: "@tabler/icons@npm:3.50.0"
+  checksum: 10c0/d274fb47a5ee2ad27fa599fba7f3d4c8aa8d02b4cc7e5544862b937215fdb7716e73cc4c3e4bf2c390e9402c8ae70f8d8945cb8b62af5c2aee67007f65c79f22
   languageName: node
   linkType: hard
 
@@ -5307,6 +5307,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"es-toolkit@npm:^1.53.1":
+  version: 1.53.1
+  resolution: "es-toolkit@npm:1.53.1"
+  dependenciesMeta:
+    "@trivago/prettier-plugin-sort-imports@4.3.0":
+      unplugged: true
+    prettier-plugin-sort-re-exports@0.0.1:
+      unplugged: true
+    vitepress-plugin-sandpack@1.1.4:
+      unplugged: true
+  checksum: 10c0/d91b1585acbc7768adbf8767b6c554c4112658fda9ccd5d244db5a853e9ee336dd1269422bc21ff63ec798d39c343b4dde5968c2a05c153163c5b91c2de5abcd
+  languageName: node
+  linkType: hard
+
 "esbuild-jest@npm:^0.5.0":
   version: 0.5.0
   resolution: "esbuild-jest@npm:0.5.0"
@@ -5688,7 +5702,7 @@ __metadata:
     "@mdx-js/loader": "npm:^3.1.0"
     "@mdx-js/react": "npm:^3.1.0"
     "@next/mdx": "npm:16.2.2"
-    "@tabler/icons-react": "npm:^3.33.0"
+    "@tabler/icons-react": "npm:^3.50.0"
     "@types/mdx": "npm:^2.0.13"
     "@types/node": "npm:^22.15.24"
     "@types/react": "npm:^19"
@@ -8290,6 +8304,7 @@ __metadata:
     "@storybook/blocks": "npm:^8.6.14"
     "@storybook/react": "npm:^8.6.14"
     "@storybook/react-vite": "npm:^8.6.14"
+    "@tabler/icons-react": "npm:^3.50.0"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.3.0"
@@ -8303,6 +8318,8 @@ __metadata:
     "@types/signale": "npm:^1"
     "@types/yargs": "npm:^17.0.33"
     "@vitejs/plugin-react": "npm:^4.5.0"
+    clsx: "npm:^2.1.1"
+    es-toolkit: "npm:^1.53.1"
     esbuild: "npm:^0.25.5"
     esbuild-jest: "npm:^0.5.0"
     fs-extra: "npm:^11.3.0"
@@ -8420,9 +8437,13 @@ __metadata:
 "mantine-diff@workspace:*, mantine-diff@workspace:package":
   version: 0.0.0-use.local
   resolution: "mantine-diff@workspace:package"
+  dependencies:
+    clsx: "npm:^2.1.1"
+    es-toolkit: "npm:^1.53.1"
   peerDependencies:
-    "@mantine/core": ">=7.0.0"
-    "@mantine/hooks": ">=7.0.0"
+    "@mantine/core": ">=9.0.0"
+    "@mantine/hooks": ">=9.0.0"
+    "@tabler/icons-react": ">=3.0.0"
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
   languageName: unknown

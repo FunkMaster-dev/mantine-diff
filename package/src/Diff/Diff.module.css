@@ -1,0 +1,44 @@
+:where([data-mantine-color-scheme='dark']) .root {
+  --mantine-diff-color-bg: var(--mantine-color-dark-8);
+}
+:where([data-mantine-color-scheme='light']) .root {
+  --mantine-diff-color-bg: var(--mantine-color-gray-0);
+}
+
+.root {
+  --node-info-padding: calc(var(--mantine-spacing-xs) / 2);
+
+  background-color: var(--mantine-diff-color-bg);
+  padding: calc(var(--mantine-spacing-xs) / 2);
+  padding-block-start: calc(var(--mantine-spacing-xs) + calc(var(--mantine-spacing-xs) / 2));
+  border-radius: var(--mantine-radius-md);
+}
+
+.node {
+  justify-content: space-between;
+}
+
+.nodeCheckbox {
+  align-self: flex-start;
+  margin-block-start: 7px;
+}
+
+.label {
+  flex: 1;
+  gap: calc(var(--mantine-spacing-xs) / 2);
+  background-color: var(--mantine-color-body);
+  margin-block-end: var(--mantine-spacing-xs);
+  padding: var(--node-info-padding);
+  border-radius: var(--mantine-radius-md);
+  box-shadow: var(--mantine-shadow-sm);
+}
+
+.labelStatus {
+  margin-inline-start: auto;
+  border-radius: var(--mantine-radius-md);
+}
+
+.labelStatusIcon {
+  width: 16px;
+  height: 16px;
+}

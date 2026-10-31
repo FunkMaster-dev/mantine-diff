@@ -5,3 +5,5 @@ export type {
   TestComponentFactory,
   TestComponentStylesNames,
 } from './TestComponent';
+
+export { Diff, type DiffProps } from './Diff';

@@ -1,0 +1,15 @@
+.root {
+}
+
+.subtree {
+}
+
+.node {
+}
+.node::before,
+.node::after {
+  transform: translateY(var(--node-info-padding));
+}
+
+.label {
+}
