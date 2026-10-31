@@ -1,4 +1,4 @@
-import { MantineColor, TreeNodeData } from '@mantine/core';
+import { MantineColor, TreeNodeData, UseTreeReturnType } from '@mantine/core';
 import { TablerIcon } from '@tabler/icons-react';
 import { ReactNode } from 'react';
 
@@ -40,4 +40,7 @@ export type DiffBaseProps = {
   config: DiffConfig;
   data: DiffNodeData[];
   statusConfig?: DiffStatusConfig;
+  tree?: UseTreeReturnType;
+  onApplyChanges?: (values: string[]) => void;
+  onCheckedChange?: (values: string[]) => void;
 };

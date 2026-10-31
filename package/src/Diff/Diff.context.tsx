@@ -6,8 +6,9 @@ type MakeRequired<T, K extends keyof T> = Omit<T, K> & {
   [P in K]-?: NonNullable<T[P]>;
 };
 
-type DiffContextValue = MakeRequired<DiffBaseProps, 'statusConfig'> & {
+type DiffContextValue = MakeRequired<DiffBaseProps, 'statusConfig' | 'tree'> & {
   getStyles: GetStylesApi<DiffFactory>;
+  diffNodesCount: number;
 };
 
 export const [DiffProvider, useDiff] = createSafeContext<DiffContextValue>(

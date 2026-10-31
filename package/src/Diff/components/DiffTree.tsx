@@ -33,11 +33,11 @@ const defaultProps = {
 
 export const DiffTree = factory<DiffTreeFactory>((__props) => {
   const props = useProps('DiffTree', defaultProps, __props);
-  const { data } = useDiff();
+  const { data, tree } = useDiff();
 
   const processedData = useMemo(() => processData(data), [data]);
 
-  return <Tree data={processedData} renderNode={DiffTreeNode} {...props} />;
+  return <Tree data={processedData} renderNode={DiffTreeNode} tree={tree} {...props} />;
 });
 
 DiffTree.displayName = 'DiffTree';

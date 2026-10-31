@@ -8,7 +8,7 @@
 }
 .node::before,
 .node::after {
-  transform: translateY(var(--node-info-padding));
+  transform: translateY(var(--mantine-diff-spacing));
 }
 
 .label {
