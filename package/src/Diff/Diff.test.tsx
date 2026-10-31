@@ -3,9 +3,7 @@ import React from 'react';
 import { Diff, DiffProps, DiffStylesNames } from './Diff';
 import { IconFile } from '@tabler/icons-react';
 
-const CONSTS = { MAIN_ID: 'main.ts', ROOT_ID: 'root.tsx' } as const;
-
-const defaultProps: DiffProps = {
+const defaultProps = {
   config: {
     file: {
       name: 'File',
@@ -14,19 +12,19 @@ const defaultProps: DiffProps = {
   },
   data: [
     {
-      id: CONSTS.MAIN_ID,
+      id: 'main.ts',
       name: 'main.ts',
       status: 'added',
       type: 'file',
     },
     {
-      id: CONSTS.ROOT_ID,
+      id: 'root.tsx',
       name: 'root.tsx',
       status: 'modified',
       type: 'file',
     },
   ],
-};
+} as const satisfies DiffProps;
 
 describe('mantine-diff/Diff', () => {
   tests.itSupportsSystemProps<DiffProps, DiffStylesNames>({
@@ -49,7 +47,7 @@ describe('mantine-diff/Diff', () => {
         <Diff.Tree />
       </Diff>
     );
-    expect(screen.getByTestId(`diff-tree-node__${CONSTS.MAIN_ID}`)).toBeInTheDocument();
-    expect(screen.getByTestId(`diff-tree-node__${CONSTS.ROOT_ID}`)).toBeInTheDocument();
+    expect(screen.getByTestId(`diff-tree-node__${defaultProps.data[0].id}`)).toBeInTheDocument();
+    expect(screen.getByTestId(`diff-tree-node__${defaultProps.data[1].id}`)).toBeInTheDocument();
   });
 });
