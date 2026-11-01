@@ -9,14 +9,15 @@ import {
   useProps,
   useStyles,
   useTree,
+  UseTreeReturnType,
 } from '@mantine/core';
 import { DiffProvider } from './Diff.context';
 import { DiffBaseProps, DiffNodeData } from './Diff.types';
 import { DiffTree } from './components/DiffTree';
 import { IconCircleAsterisk, IconCircleMinus, IconCirclePlus } from '@tabler/icons-react';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import classes from './Diff.module.css';
-import { sum } from 'es-toolkit';
+import { isEqual, sum } from 'es-toolkit';
 import { DiffCounter } from './components/DiffCounter';
 import { DiffApproveAllCheckbox } from './components/DiffApproveAllCheckbox';
 import { DiffApplyChangesButton } from './components/DiffApplyChangesButton';
@@ -110,6 +111,8 @@ export const Diff = polymorphicFactory<DiffFactory>((__props) => {
 
   const diffNodesCount = useMemo(() => getDiffNodesCount(data), [data]);
 
+  useOnCheckedChangeEffect(tree ?? __tree, onCheckedChange);
+
   return (
     <Box {...getStyles('root')} {...others}>
       <DiffProvider
@@ -136,6 +139,20 @@ const getDiffNodesCount = (data: DiffNodeData[]): number => {
   };
 
   return sum(data.map(countNodes));
+};
+
+const useOnCheckedChangeEffect = (
+  tree: UseTreeReturnType,
+  onCheckedChange: DiffProps['onCheckedChange']
+) => {
+  const prevCheckedState = useRef(tree.checkedState);
+
+  useEffect(() => {
+    if (!isEqual(prevCheckedState.current, tree.checkedState)) {
+      onCheckedChange?.(tree.getCheckedNodes().map((node) => node.value));
+      prevCheckedState.current = tree.checkedState;
+    }
+  }, [onCheckedChange, tree.getCheckedNodes, tree.checkedState]);
 };
 
 Diff.displayName = 'Diff';

@@ -9,13 +9,18 @@ import { Group } from '@mantine/core';
 import { Diff } from 'mantine-diff';
 import { config, data } from './data.tsx';
 
-const demoOnApplyChanges = (values: string[]) => {
+const demoValuesHandler = (values: string[]) => {
   console.log({ values });
 };
 
 function Demo() {
   return (
-    <Diff config={config} data={data} onApplyChanges={demoOnApplyChanges}>
+    <Diff
+      config={config}
+      data={data}
+      onApplyChanges={demoValuesHandler}
+      onCheckedChange={demoValuesHandler}
+    >
       <Group justify="space-between">
         <Diff.Counter />
         <Diff.ApproveAllCheckbox />
@@ -31,14 +36,19 @@ function Demo() {
 }
 `;
 
-const demoOnApplyChanges = (values: string[]) => {
+const demoValuesHandler = (values: string[]) => {
   // oxlint-disable-next-line no-console
   console.log({ values });
 };
 
 function Demo() {
   return (
-    <Diff config={config} data={data} onApplyChanges={demoOnApplyChanges}>
+    <Diff
+      config={config}
+      data={data}
+      onApplyChanges={demoValuesHandler}
+      onCheckedChange={demoValuesHandler}
+    >
       <Group justify="space-between">
         <Diff.Counter />
         <Diff.ApproveAllCheckbox />
