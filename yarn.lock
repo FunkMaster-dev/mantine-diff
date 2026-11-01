@@ -8372,7 +8372,6 @@ __metadata:
     version-next: "npm:^1.0.2"
     vite: "npm:^6.3.5"
     yargs: "npm:^18.0.0"
-    zx: "npm:^8.5.4"
   languageName: unknown
   linkType: soft
 
@@ -13575,14 +13574,5 @@ __metadata:
   version: 2.0.4
   resolution: "zwitch@npm:2.0.4"
   checksum: 10c0/3c7830cdd3378667e058ffdb4cf2bb78ac5711214e2725900873accb23f3dfe5f9e7e5a06dcdc5f29605da976fc45c26d9a13ca334d6eea2245a15e77b8fc06e
-  languageName: node
-  linkType: hard
-
-"zx@npm:^8.5.4":
-  version: 8.5.4
-  resolution: "zx@npm:8.5.4"
-  bin:
-    zx: build/cli.js
-  checksum: 10c0/073bd39ba46d278c8bfb72df641a6eed409974633cf5195fc1d5148517c454319e35413eb8076821928d02a1ae5a4f863147712c538e61fe0a4b78c0e01a10be
   languageName: node
   linkType: hard
