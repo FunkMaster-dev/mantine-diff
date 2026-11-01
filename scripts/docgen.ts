@@ -5,7 +5,7 @@ const getComponentPath = (componentPath: string) =>
   path.join(process.cwd(), 'package/src', componentPath);
 
 generateDeclarations({
-  componentsPaths: [getComponentPath('TestComponent.tsx')],
+  componentsPaths: [getComponentPath('TestComponent.tsx'), getComponentPath('Diff/Diff.tsx')],
   tsConfigPath: path.join(process.cwd(), 'tsconfig.json'),
   outputPath: path.join(process.cwd(), 'docs'),
 });
