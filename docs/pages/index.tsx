@@ -13,8 +13,8 @@ export default function HomePage() {
       <PageHeader data={PACKAGE_DATA} />
       <DocsTabs
         docgen={docgen}
-        componentsProps={['TestComponent', 'Diff']}
-        componentsStyles={['TestComponent', 'Diff']}
+        componentsProps={['Diff']}
+        componentsStyles={['Diff']}
         stylesApiData={STYLES_API_DATA}
       >
         <Docs />
