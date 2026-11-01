@@ -15,46 +15,40 @@ export const config: DiffProps['config'] = {
 export const data: DiffProps['data'] = [
   {
     id: 'src',
-    type: 'folder',
     name: 'src',
     status: 'modified',
+    type: 'folder',
     children: [
       {
-        id: 'src/root.ts',
-        type: 'file',
-        name: 'root.ts',
-        status: 'added',
-      },
-      {
-        id: 'src/hooks',
-        name: 'hooks',
-        type: 'folder',
+        id: 'src/root.tsx',
+        name: 'root.tsx',
         status: 'modified',
-        children: [
-          { id: 'src/hooks/useMyData.ts', name: 'useMyData.ts', type: 'file', status: 'added' },
-          {
-            id: 'src/hooks/useSomeHook.ts',
-            name: 'useSomeHook.ts',
-            type: 'file',
-            status: 'modified',
-            content: <div>Some changes</div>,
-          },
-        ],
-      },
-      {
-        id: 'src/index.ts',
         type: 'file',
-        name: 'index.ts',
-        status: 'removed',
-      },
-      {
-        id: 'src/main.ts',
-        type: 'file',
-        name: 'index.ts',
-        status: 'modified',
-        content: <div>Hey there</div>,
+        content: <>root.tsx modified</>,
       },
     ],
+  },
+  {
+    id: 'dist',
+    name: 'dist',
+    status: 'removed',
+    type: 'folder',
+    children: [
+      {
+        id: 'dist/index.d.ts',
+        name: 'index.d.ts',
+        status: 'removed',
+        type: 'file',
+        content: <>index.d.ts removed</>,
+      },
+    ],
+  },
+  {
+    id: 'index.ts',
+    name: 'index.ts',
+    status: 'added',
+    type: 'file',
+    content: <>index.ts added</>,
   },
 ];
 
@@ -76,46 +70,40 @@ export const config: DiffProps['config'] = {
 export const data: DiffProps['data'] = [
   {
     id: 'src',
-    type: 'folder',
     name: 'src',
     status: 'modified',
+    type: 'folder',
     children: [
       {
-        id: 'src/root.ts',
-        type: 'file',
-        name: 'root.ts',
-        status: 'added',
-      },
-      {
-        id: 'src/hooks',
-        name: 'hooks',
-        type: 'folder',
-        status: 'added',
-        children: [
-          { id: 'src/hooks/useMyData.ts', name: 'useMyData.ts', type: 'file', status: 'added' },
-          {
-            id: 'src/hooks/useSomeHook.ts',
-            name: 'useSomeHook.ts',
-            type: 'file',
-            status: 'modified',
-            content: <div>Some changes</div>,
-          },
-        ],
-      },
-      {
-        id: 'src/index.ts',
-        type: 'file',
-        name: 'index.ts',
-        status: 'removed',
-      },
-      {
-        id: 'src/main.ts',
-        type: 'file',
-        name: 'index.ts',
+        id: 'src/root.tsx',
+        name: 'root.tsx',
         status: 'modified',
-        content: <div>Hey there</div>,
+        type: 'file',
+        content: <>root.tsx modified</>,
       },
     ],
+  },
+  {
+    id: 'dist',
+    name: 'dist',
+    status: 'removed',
+    type: 'folder',
+    children: [
+      {
+        id: 'dist/index.d.ts',
+        name: 'index.d.ts',
+        status: 'removed',
+        type: 'file',
+        content: <>index.d.ts removed</>,
+      },
+    ],
+  },
+  {
+    id: 'index.ts',
+    name: 'index.ts',
+    status: 'added',
+    type: 'file',
+    content: <>index.ts added</>,
   },
 ];
 `;
