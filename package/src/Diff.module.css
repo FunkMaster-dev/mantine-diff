@@ -1,6 +1,7 @@
 :where([data-mantine-color-scheme='dark']) .root {
   --mantine-diff-color-bg: var(--mantine-color-dark-8);
 }
+
 :where([data-mantine-color-scheme='light']) .root {
   --mantine-diff-color-bg: var(--mantine-color-gray-0);
 }

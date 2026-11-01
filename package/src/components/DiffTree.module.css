@@ -1,15 +1,12 @@
-.root {
+/* .root {
 }
-
 .subtree {
 }
-
 .node {
 }
+.label {
+} */
 .node::before,
 .node::after {
   transform: translateY(var(--mantine-diff-spacing));
-}
-
-.label {
 }
