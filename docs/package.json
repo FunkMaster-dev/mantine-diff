@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@funkmaster/mantine-diff": "workspace:*",
     "@mantine/code-highlight": "9.7.3",
     "@mantine/core": "9.7.3",
     "@mantine/hooks": "9.7.3",
@@ -20,9 +21,8 @@
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "16.2.2",
-    "@tabler/icons-react": "^3.33.0",
+    "@tabler/icons-react": "^3.50.0",
     "@types/mdx": "^2.0.13",
-    "mantine-diff": "workspace:*",
     "next": "16.2.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",

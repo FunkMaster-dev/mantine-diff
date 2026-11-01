@@ -1,9 +1,9 @@
 {
-  "name": "mantine-diff",
-  "version": "0.2.2",
-  "description": "A template for Mantine extensions",
+  "name": "@funkmaster/mantine-diff",
+  "version": "0.0.0",
+  "description": "Diff component for mantine",
   "homepage": "https://github.com/FunkMaster-dev/mantine-diff#readme",
-  "packageManager": "yarn@4.0.1",
+  "packageManager": "yarn@4.18.1",
   "license": "MIT",
   "author": "Boaz Geller",
   "keywords": [
@@ -27,10 +27,15 @@
     "./styles.css": "./dist/styles.css",
     "./styles.layer.css": "./dist/styles.layer.css"
   },
-  "repository": "https://github.com/mantinedev/extension-template.git",
+  "repository": "https://github.com/FunkMaster-dev/mantine-diff.git",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "es-toolkit": "^1.53.1"
+  },
   "peerDependencies": {
-    "@mantine/core": ">=7.0.0",
-    "@mantine/hooks": ">=7.0.0",
+    "@mantine/core": ">=9.0.0",
+    "@mantine/hooks": ">=9.0.0",
+    "@tabler/icons-react": ">=3.0.0",
     "react": "^18.x || ^19.x",
     "react-dom": "^18.x || ^19.x"
   },
