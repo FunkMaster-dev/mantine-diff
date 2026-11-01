@@ -25,7 +25,7 @@ export interface PackageData {
 }
 
 export const PACKAGE_DATA: PackageData = {
-  packageName: 'mantine-diff',
+  packageName: '@funkmaster/mantine-diff',
   packageDescription:
     'A template for mantine extensions, includes full setup for package development and documentation',
   mdxFileUrl: 'https://github.com/FunkMaster-dev/mantine-diff/blob/master/docs/pages/index.mdx',

@@ -55,7 +55,7 @@ const defaultProps = {
   ],
 } as const satisfies DiffProps;
 
-describe('mantine-diff/Diff', () => {
+describe('@funkmaster/mantine-diff/Diff', () => {
   tests.itSupportsSystemProps<DiffProps, DiffStylesNames>({
     component: Diff,
     props: defaultProps,
@@ -81,7 +81,7 @@ describe('mantine-diff/Diff', () => {
     expect(screen.getByTestId(`diff-tree-node__${defaultProps.data[2].id}`)).toBeInTheDocument();
   });
 
-  describe('mantine-diff/DiffCounter', () => {
+  describe('@funkmaster/mantine-diff/DiffCounter', () => {
     it('initial value should be unchecked', () => {
       const dataTestid = 'counter';
       render(

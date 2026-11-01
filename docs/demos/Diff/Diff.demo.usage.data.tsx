@@ -1,5 +1,5 @@
 import { IconFile, IconFolder } from '@tabler/icons-react';
-import { DiffProps } from 'mantine-diff';
+import { DiffProps } from '@funkmaster/mantine-diff';
 
 export const config: DiffProps['config'] = {
   file: {
@@ -54,7 +54,7 @@ export const data: DiffProps['data'] = [
 
 export const code = `
 import { IconFile, IconFolder } from "@tabler/icons-react";
-import type { DiffProps } from "mantine-diff";
+import type { DiffProps } from "@funkmaster/mantine-diff";
 
 export const config: DiffProps['config'] = {
   file: {

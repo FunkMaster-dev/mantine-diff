@@ -1,4 +1,4 @@
-import type { DiffFactory } from 'mantine-diff';
+import type { DiffFactory } from '@funkmaster/mantine-diff';
 import type { StylesApiData } from '../components/styles-api.types';
 
 export const DiffStylesApi: StylesApiData<DiffFactory> = {

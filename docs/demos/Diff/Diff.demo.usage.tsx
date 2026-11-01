@@ -1,12 +1,12 @@
 import { MantineDemo } from '@mantinex/demo';
 import { Group } from '@mantine/core';
-import { Diff } from 'mantine-diff';
+import { Diff } from '@funkmaster/mantine-diff';
 import { config, data, code as dataCode } from './Diff.demo.usage.data';
 import React from 'react';
 
 const code = `
 import { Group } from '@mantine/core';
-import { Diff } from 'mantine-diff';
+import { Diff } from '@funkmaster/mantine-diff';
 import { config, data } from './data.tsx';
 
 const demoValuesHandler = (values: string[]) => {

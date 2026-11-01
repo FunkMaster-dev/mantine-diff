@@ -1012,6 +1012,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@funkmaster/mantine-diff@workspace:*, @funkmaster/mantine-diff@workspace:package":
+  version: 0.0.0-use.local
+  resolution: "@funkmaster/mantine-diff@workspace:package"
+  dependencies:
+    clsx: "npm:^2.1.1"
+    es-toolkit: "npm:^1.53.1"
+  peerDependencies:
+    "@mantine/core": ">=9.0.0"
+    "@mantine/hooks": ">=9.0.0"
+    "@tabler/icons-react": ">=3.0.0"
+    react: ^18.x || ^19.x
+    react-dom: ^18.x || ^19.x
+  languageName: unknown
+  linkType: soft
+
 "@img/colour@npm:^1.0.0":
   version: 1.1.0
   resolution: "@img/colour@npm:1.1.0"
@@ -5691,6 +5706,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "extension-template-docs@workspace:docs"
   dependencies:
+    "@funkmaster/mantine-diff": "workspace:*"
     "@mantine/code-highlight": "npm:9.7.3"
     "@mantine/core": "npm:9.7.3"
     "@mantine/hooks": "npm:9.7.3"
@@ -5707,7 +5723,6 @@ __metadata:
     "@types/node": "npm:^22.15.24"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
-    mantine-diff: "workspace:*"
     next: "npm:16.2.2"
     react: "npm:19.2.4"
     react-dom: "npm:19.2.4"
@@ -8433,21 +8448,6 @@ __metadata:
   checksum: 10c0/b0e6e599780ce6bab49cc413eba822f7d1f0dfebd1c103eaa3785c59e43e22c59018323cf9e1708f0ef5329e94a745d163fcbb6bff8e4c6742f9be9e86f3500c
   languageName: node
   linkType: hard
-
-"mantine-diff@workspace:*, mantine-diff@workspace:package":
-  version: 0.0.0-use.local
-  resolution: "mantine-diff@workspace:package"
-  dependencies:
-    clsx: "npm:^2.1.1"
-    es-toolkit: "npm:^1.53.1"
-  peerDependencies:
-    "@mantine/core": ">=9.0.0"
-    "@mantine/hooks": ">=9.0.0"
-    "@tabler/icons-react": ">=3.0.0"
-    react: ^18.x || ^19.x
-    react-dom: ^18.x || ^19.x
-  languageName: unknown
-  linkType: soft
 
 "mantine-docgen-script@npm:^1.5.0":
   version: 1.5.0

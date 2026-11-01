@@ -1,9 +1,9 @@
 import { MantineDemo } from '@mantinex/demo';
-import { TestComponent } from 'mantine-diff';
+import { TestComponent } from '@funkmaster/mantine-diff';
 import React from 'react';
 
 const code = `
-import { TestComponent } from 'mantine-diff';
+import { TestComponent } from '@funkmaster/mantine-diff';
 
 function Demo() {
   return <TestComponent{{props}} />;

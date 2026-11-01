@@ -1,5 +1,5 @@
 {
-  "name": "mantine-diff",
+  "name": "@funkmaster/mantine-diff",
   "version": "0.2.2",
   "description": "A template for Mantine extensions",
   "homepage": "https://github.com/FunkMaster-dev/mantine-diff#readme",

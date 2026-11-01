@@ -1,4 +1,4 @@
-import type { TestComponentFactory } from 'mantine-diff';
+import type { TestComponentFactory } from '@funkmaster/mantine-diff';
 import type { StylesApiData } from '../components/styles-api.types';
 
 export const TestComponentStylesApi: StylesApiData<TestComponentFactory> = {
