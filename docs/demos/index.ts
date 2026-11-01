@@ -1,1 +1,1 @@
-export { diffUsage } from './Diff/Diff.demo.usage';
+export { diffUsage } from './Diff.demo.usage';
