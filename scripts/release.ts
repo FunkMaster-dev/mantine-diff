@@ -7,10 +7,18 @@ import SimpleGit from 'simple-git';
 import { getNextVersion, VersionIncrement, VersionStage } from 'version-next';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { $ } from 'zx';
+import { execFileSync } from 'node:child_process';
 import { run } from './run';
 import { updateVersion } from './update-version';
 import path from 'node:path';
+
+async function sh(command: string, args: string[] = [], cwd?: string) {
+  await Promise.resolve();
+  execFileSync(command, args, {
+    stdio: 'inherit',
+    cwd,
+  });
+}
 
 const packageJsonPath = path.join(process.cwd(), 'package/package.json');
 const packageJson = fs.readJsonSync(packageJsonPath);
@@ -52,19 +60,19 @@ async function release() {
     `Current version: ${chalk.cyan(packageJson.version)}, next version: ${chalk.cyan(nextVersion)}`
   );
 
-  await run($`yarn`, {
+  await run(sh(`yarn`), {
     info: 'Installing fresh dependencies',
     success: 'Fresh dependencies have been installed',
     error: 'Failed to install fresh dependencies',
   });
 
-  await run($`yarn run clean`, {
+  await run(sh('npm', ['run', 'clean']), {
     info: 'Removing dist directory',
     success: 'dist directory has been removed',
     error: 'Failed to remove dist directory',
   });
 
-  await run($`yarn run build`, {
+  await run(sh('npm', ['run', 'build']), {
     info: 'Building the package',
     success: 'The package has been built',
     error: 'Failed to build the package',
@@ -82,8 +90,9 @@ async function release() {
 
   const revertVersion = await updateVersion(nextVersion);
 
+  const tag = versionStage ? 'next' : 'latest';
   await run(
-    $`cd ./package && npm publish --access public --tag ${versionStage ? 'next' : 'latest'}`,
+    sh('npm', ['publish', '--access', 'public', '--tag', tag], path.join(process.cwd(), 'package')),
     {
       info: 'Publishing the package to npm',
       success: 'The package has been published to npm',
