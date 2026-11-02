@@ -55,13 +55,17 @@ export type DiffBaseProps = {
    */
   tree?: UseTreeReturnType;
   /**
-   * Callback to trigger when the changes are submitted. 
+   * Callback to trigger when the changes are submitted.
    * Called with a list of the submitted values
    */
   onApplyChanges?: (values: string[]) => void;
   /**
-   * Callback to trigger on the tree checked state changes
+   * Callback to trigger on the tree checked state changes.
    * Called with a list of the new checked state
    */
   onCheckedChange?: (values: string[]) => void;
+  /**
+   * If set to to true, all diff write logics will be be disabled and hidden
+   */
+  readMode?: boolean;
 };

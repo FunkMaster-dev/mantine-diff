@@ -34,7 +34,7 @@ const DiffStatusBadge = ({ status }: { status: DiffStatus }) => {
 
 export const DiffTreeNode: NonNullable<TreeProps['renderNode']> = (props) => {
   const node = props.node as DiffTreeNodeData;
-  const { getStyles } = useDiff();
+  const { getStyles, readMode } = useDiff();
   const { name: prefix, TablerIcon: IconLabel } = useDiffConfigEntry(node.nodeProps.type);
   const hasContent = !!node.nodeProps.content;
   const isExpandable = props.hasChildren || hasContent;
@@ -104,13 +104,15 @@ export const DiffTreeNode: NonNullable<TreeProps['renderNode']> = (props) => {
           </Collapse>
         )}
       </Stack>
-      <Checkbox
-        variant="outline"
-        checked={isChecked}
-        indeterminate={isIndeterminate}
-        onClick={toggleChecked}
-        {...getStyles('nodeCheckbox')}
-      />
+      {!readMode && (
+        <Checkbox
+          variant="outline"
+          checked={isChecked}
+          indeterminate={isIndeterminate}
+          onClick={toggleChecked}
+          {...getStyles('nodeCheckbox')}
+        />
+      )}
     </Group>
   );
 };

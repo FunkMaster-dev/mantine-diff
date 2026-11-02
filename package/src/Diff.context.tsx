@@ -6,7 +6,7 @@ type MakeRequired<T, K extends keyof T> = Omit<T, K> & {
   [P in K]-?: NonNullable<T[P]>;
 };
 
-type DiffContextValue = MakeRequired<DiffBaseProps, 'statusConfig' | 'tree'> & {
+type DiffContextValue = MakeRequired<DiffBaseProps, 'statusConfig' | 'tree' | 'readMode'> & {
   getStyles: GetStylesApi<DiffFactory>;
   diffNodesCount: number;
 };
@@ -14,6 +14,8 @@ type DiffContextValue = MakeRequired<DiffBaseProps, 'statusConfig' | 'tree'> & {
 export const [DiffProvider, useDiff] = createSafeContext<DiffContextValue>(
   'Missing `DiffProvider` in the tree.'
 );
+
+export type UseDiffReturnType = ReturnType<typeof useDiff>;
 
 export const useDiffConfigEntry = (type: string) => {
   const entry = useDiff().config[type];

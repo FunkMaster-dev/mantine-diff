@@ -1,1 +1,2 @@
-export { diffUsage } from './Diff.demo.usage';
+export { usage } from './Diff.demo.usage';
+export { readMode } from './Diff.demo.readMode';

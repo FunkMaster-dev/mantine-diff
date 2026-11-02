@@ -17,6 +17,22 @@ You can import styles within a layer `@layer mantine-diff` by importing `@funkma
 import '@funkmaster/mantine-diff/styles.layer.css';
 ```
 
-## Diff demo
+## Usage
 
-<Demo data={demos.diffUsage} />
+<Demo data={demos.usage} />
+
+## Read mode
+
+The `readMode` prop turns off all of the component's write logics
+
+<Demo data={demos.readMode} />
+
+> **Note:** The following components are disabled at `readMode`:
+>
+> - `<Diff.Counter />`
+> - `<Diff.ApproveAllCheckbox />` 
+> - `<Diff.ApplyChangesButton />`
+>
+> They will not render any elements to the page
+> 
+

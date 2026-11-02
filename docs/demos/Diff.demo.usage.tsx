@@ -63,7 +63,7 @@ function Demo() {
   );
 }
 
-export const diffUsage: MantineDemo = {
+export const usage: MantineDemo = {
   type: 'code',
   component: Demo,
   code: [

@@ -74,6 +74,7 @@ const defaultProps = {
       TablerIcon: IconCircleMinus,
     },
   },
+  readMode: false,
 } satisfies Partial<DiffProps>;
 
 const varsResolver = createVarsResolver<DiffFactory>(() => ({
@@ -89,6 +90,7 @@ export const Diff = polymorphicFactory<DiffFactory>((__props) => {
     tree,
     onApplyChanges,
     onCheckedChange,
+    readMode,
     children,
     className,
     style,
@@ -116,7 +118,7 @@ export const Diff = polymorphicFactory<DiffFactory>((__props) => {
 
   const diffNodesCount = useMemo(() => getDiffNodesCount(data), [data]);
 
-  useOnCheckedChangeEffect(tree ?? __tree, onCheckedChange);
+  useOnCheckedChangeEffect(tree ?? __tree, !readMode ? onCheckedChange : undefined);
 
   return (
     <Box {...getStyles('root')} {...others}>
@@ -125,10 +127,11 @@ export const Diff = polymorphicFactory<DiffFactory>((__props) => {
           config,
           data,
           statusConfig,
-          onApplyChanges,
-          onCheckedChange,
+          onApplyChanges: !readMode ? onApplyChanges : undefined,
+          onCheckedChange: !readMode ? onCheckedChange : undefined,
           getStyles,
           tree: tree ?? __tree,
+          readMode,
           diffNodesCount,
         }}
       >
@@ -166,4 +169,3 @@ Diff.Tree = DiffTree;
 Diff.Counter = DiffCounter;
 Diff.ApproveAllCheckbox = DiffApproveAllCheckbox;
 Diff.ApplyChangesButton = DiffApplyChangesButton;
-// Diff.Controls
