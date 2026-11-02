@@ -55,13 +55,13 @@ export type DiffBaseProps = {
    */
   tree?: UseTreeReturnType;
   /**
-   * Callback to trigger when the changes are submitted
-   * @param values - a list of the approved diff nodes' ids
+   * Callback to trigger when the changes are submitted. 
+   * Called with a list of the submitted values
    */
   onApplyChanges?: (values: string[]) => void;
   /**
    * Callback to trigger on the tree checked state changes
-   * @param values - The newly checked state of the tree
+   * Called with a list of the new checked state
    */
   onCheckedChange?: (values: string[]) => void;
 };

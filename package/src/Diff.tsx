@@ -27,8 +27,13 @@ export type DiffStylesNames =
   | 'node'
   | 'nodeCheckbox'
   | 'label'
+  | 'labelChevron'
+  | 'labelContent'
+  | 'labelIcon'
   | 'labelStatus'
-  | 'labelStatusIcon';
+  | 'labelStatusIcon'
+  | 'labelText'
+  | 'labelTextPrefix';
 
 export type DiffCssVariables = {};
 

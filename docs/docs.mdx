@@ -5,6 +5,18 @@ import * as demos from './demos';
 
 <InstallScript packages="@funkmaster/mantine-diff" />
 
+After installation import package styles at the root of your application:
+
+```tsx
+import '@funkmaster/mantine-diff/styles.css';
+```
+
+You can import styles within a layer `@layer mantine-diff` by importing `@funkmaster/mantine-diff/styles.layer.css` file.
+
+```tsx
+import '@funkmaster/mantine-diff/styles.layer.css';
+```
+
 ## Diff demo
 
 <Demo data={demos.diffUsage} />

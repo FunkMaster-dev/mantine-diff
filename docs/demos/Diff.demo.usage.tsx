@@ -7,7 +7,7 @@ import React from 'react';
 const code = `
 import { Group } from '@mantine/core';
 import { Diff } from '@funkmaster/mantine-diff';
-import { config, data } from './data.tsx';
+import { config, data } from './data';
 
 const demoValuesHandler = (values: string[]) => {
   console.log({ values });
@@ -68,7 +68,7 @@ export const diffUsage: MantineDemo = {
   component: Demo,
   code: [
     { code, fileName: 'Demo.tsx', language: 'tsx' },
-    { code: dataCode, fileName: 'data.tsx', language: 'tsx' },
+    { code: dataCode, fileName: 'data.ts', language: 'tsx' },
   ],
   centered: true,
 };

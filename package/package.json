@@ -7,8 +7,15 @@
   "license": "MIT",
   "author": "Boaz Geller",
   "keywords": [
+    "mantine",
+    "mantine-ui",
+    "mantine-v9",
+    "react",
+    "react-component",
+    "typescript",
     "extension",
-    "mantine"
+    "component",
+    "diff"
   ],
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.mjs",
