@@ -12,6 +12,7 @@ import {
 import { IconChevronDown, IconChevronRight } from '@tabler/icons-react';
 import clsx from 'clsx';
 import { toMerged } from 'es-toolkit/object';
+import { isEmpty } from 'es-toolkit/compat';
 import React, { useCallback, useMemo } from 'react';
 import { useDiff, useDiffConfigEntry, useDiffStatusConfigEntry } from '../Diff.context';
 import { DiffStatus, DiffTreeNodeData } from '../Diff.types';
@@ -35,7 +36,12 @@ const DiffStatusBadge = ({ status }: { status: DiffStatus }) => {
 export const DiffTreeNode: NonNullable<TreeProps['renderNode']> = (props) => {
   const node = props.node as DiffTreeNodeData;
   const { getStyles, readMode } = useDiff();
-  const { name: prefix, TablerIcon: IconLabel } = useDiffConfigEntry(node.nodeProps.type);
+  const {
+    prefix,
+    hidePrefix,
+    hideLabel,
+    TablerIcon: IconLabel,
+  } = useDiffConfigEntry(node.nodeProps.type);
   const hasContent = !!node.nodeProps.content;
   const isExpandable = props.hasChildren || hasContent;
 
@@ -88,12 +94,16 @@ export const DiffTreeNode: NonNullable<TreeProps['renderNode']> = (props) => {
             </ActionIcon>
           )}
           {IconLabel && <IconLabel {...getStyles('labelIcon')} />}
-          <Text fw={500} {...getStyles('labelTextPrefix')}>
-            {prefix}
-          </Text>
-          <Text fw={700} {...getStyles('labelText')}>
-            "{node.nodeProps.name}"
-          </Text>
+          {!hidePrefix && (
+            <Text fw={500} {...getStyles('labelTextPrefix')}>
+              {prefix}
+            </Text>
+          )}
+          {!hideLabel && (
+            <Text fw={700} {...getStyles('labelText')}>
+              "{!isEmpty(node.nodeProps.label) ? node.nodeProps.label : node.value}"
+            </Text>
+          )}
           <DiffStatusBadge status={node.nodeProps.status} />
         </Group>
         {hasContent && (

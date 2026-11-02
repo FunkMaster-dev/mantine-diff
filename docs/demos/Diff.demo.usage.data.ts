@@ -3,11 +3,11 @@ import { DiffProps } from '@funkmaster/mantine-diff';
 
 export const config: DiffProps['config'] = {
   file: {
-    name: 'File',
+    prefix: 'File',
     TablerIcon: IconFile,
   },
   folder: {
-    name: 'Folder',
+    prefix: 'Folder',
     TablerIcon: IconFolder,
   },
 };
@@ -15,13 +15,13 @@ export const config: DiffProps['config'] = {
 export const data: DiffProps['data'] = [
   {
     id: 'src',
-    name: 'src',
+    label: 'src',
     status: 'modified',
     type: 'folder',
     children: [
       {
         id: 'src/root.tsx',
-        name: 'root.tsx',
+        label: 'root.tsx',
         status: 'modified',
         type: 'file',
         content: 'root.tsx modified',
@@ -30,13 +30,13 @@ export const data: DiffProps['data'] = [
   },
   {
     id: 'dist',
-    name: 'dist',
+    label: 'dist',
     status: 'removed',
     type: 'folder',
     children: [
       {
         id: 'dist/index.d.ts',
-        name: 'index.d.ts',
+        label: 'index.d.ts',
         status: 'removed',
         type: 'file',
         content: 'index.d.ts removed',
@@ -45,7 +45,7 @@ export const data: DiffProps['data'] = [
   },
   {
     id: 'index.ts',
-    name: 'index.ts',
+    label: 'index.ts',
     status: 'added',
     type: 'file',
     content: 'index.ts added',
@@ -58,11 +58,11 @@ import type { DiffProps } from "@funkmaster/mantine-diff";
 
 export const config: DiffProps['config'] = {
   file: {
-    name: 'File',
+    prefix: 'File',
     TablerIcon: IconFile,
   },
   folder: {
-    name: 'Folder',
+    prefix: 'Folder',
     TablerIcon: IconFolder,
   },
 };
@@ -70,40 +70,40 @@ export const config: DiffProps['config'] = {
 export const data: DiffProps['data'] = [
   {
     id: 'src',
-    name: 'src',
+    label: 'src',
     status: 'modified',
     type: 'folder',
     children: [
       {
         id: 'src/root.tsx',
-        name: 'root.tsx',
+        label: 'root.tsx',
         status: 'modified',
         type: 'file',
-        content: "root.tsx modified",
+        content: 'root.tsx modified',
       },
     ],
   },
   {
     id: 'dist',
-    name: 'dist',
+    label: 'dist',
     status: 'removed',
     type: 'folder',
     children: [
       {
         id: 'dist/index.d.ts',
-        name: 'index.d.ts',
+        label: 'index.d.ts',
         status: 'removed',
         type: 'file',
-        content: "index.d.ts removed",
+        content: 'index.d.ts removed',
       },
     ],
   },
   {
     id: 'index.ts',
-    name: 'index.ts',
+    label: 'index.ts',
     status: 'added',
     type: 'file',
-    content: "index.ts added",
+    content: 'index.ts added',
   },
 ];
 `;

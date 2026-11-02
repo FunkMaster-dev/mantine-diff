@@ -7,20 +7,20 @@ export default { title: 'Diff' };
 const defaultProps = {
   config: {
     file: {
-      name: 'File',
+      prefix: 'File',
       TablerIcon: IconFile,
     },
   },
   data: [
     {
       id: 'main.ts',
-      name: 'main.ts',
+      label: 'main.ts',
       status: 'added',
       type: 'file',
     },
     {
       id: 'root.tsx',
-      name: 'root.tsx',
+      label: 'root.tsx',
       status: 'modified',
       type: 'file',
     },

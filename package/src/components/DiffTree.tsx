@@ -11,7 +11,7 @@ const processData = (data: DiffBaseProps['data']): DiffTreeNodeData[] => {
     value: node.id,
     nodeProps: {
       type: node.type,
-      name: node.name,
+      label: node.label,
       status: node.status,
       content: node.content,
     },
