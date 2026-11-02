@@ -13,21 +13,53 @@ type DiffStatusConfigEntry = {
 export type DiffStatusConfig = Record<DiffStatus, DiffStatusConfigEntry>;
 
 type DiffConfigEntry = {
-  name: string;
+  /**
+   * A prefix text to display before the main label text
+   */
+  prefix: string;
+  /**
+   * Flags that controls weather to display the `prefix` text
+   */
+  hidePrefix?: boolean;
+  /**
+   * Flags that controls weather to display the a node's `label` text
+   */
+  hideLabel?: boolean;
+  /**
+   * An optional tabler icon to display in the node's label
+   */
   TablerIcon?: TablerIcon;
 };
 
 export type DiffConfig = Record<string, DiffConfigEntry>;
 
 type DiffNodeBaseData = {
+  /**
+   * The node's type
+   */
   type: string;
-  name: string;
+  /**
+   * The main text to display in the node's label
+   */
+  label: string;
+  /**
+   * The node's change status
+   */
   status: DiffStatus;
+  /**
+   * An optional content to display inside the expandable area of the node
+   */
   content?: ReactNode;
 };
 
 export type DiffNodeData = DiffNodeBaseData & {
+  /**
+   * The ID of the node, used internally as the tree-node's `value`
+   */
   id: string;
+  /**
+   * List of all sub-nodes
+   */
   children?: DiffNodeData[];
 };
 
