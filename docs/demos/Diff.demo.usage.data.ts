@@ -24,7 +24,7 @@ export const data: DiffProps['data'] = [
         name: 'root.tsx',
         status: 'modified',
         type: 'file',
-        content: <>root.tsx modified</>,
+        content: 'root.tsx modified',
       },
     ],
   },
@@ -39,7 +39,7 @@ export const data: DiffProps['data'] = [
         name: 'index.d.ts',
         status: 'removed',
         type: 'file',
-        content: <>index.d.ts removed</>,
+        content: 'index.d.ts removed',
       },
     ],
   },
@@ -48,7 +48,7 @@ export const data: DiffProps['data'] = [
     name: 'index.ts',
     status: 'added',
     type: 'file',
-    content: <>index.ts added</>,
+    content: 'index.ts added',
   },
 ];
 
@@ -79,7 +79,7 @@ export const data: DiffProps['data'] = [
         name: 'root.tsx',
         status: 'modified',
         type: 'file',
-        content: <>root.tsx modified</>,
+        content: "root.tsx modified",
       },
     ],
   },
@@ -94,7 +94,7 @@ export const data: DiffProps['data'] = [
         name: 'index.d.ts',
         status: 'removed',
         type: 'file',
-        content: <>index.d.ts removed</>,
+        content: "index.d.ts removed",
       },
     ],
   },
@@ -103,7 +103,7 @@ export const data: DiffProps['data'] = [
     name: 'index.ts',
     status: 'added',
     type: 'file',
-    content: <>index.ts added</>,
+    content: "index.ts added",
   },
 ];
 `;

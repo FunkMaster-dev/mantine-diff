@@ -12,7 +12,7 @@ export const DiffApplyChangesButton = ({
   onClick: __onClick,
   ...props
 }: DiffApplyChangesButtonProps) => {
-  const { tree, onApplyChanges } = useDiff();
+  const { tree, onApplyChanges, readMode } = useDiff();
 
   const onClick = useCallback(
     (event) => {
@@ -25,8 +25,10 @@ export const DiffApplyChangesButton = ({
   ) satisfies DiffApplyChangesButtonProps['onClick'];
 
   return (
-    <Button {...props} onClick={onClick}>
-      {label}
-    </Button>
+    !readMode && (
+      <Button {...props} onClick={onClick}>
+        {label}
+      </Button>
+    )
   );
 };

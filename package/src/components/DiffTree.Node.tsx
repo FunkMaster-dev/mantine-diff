@@ -1,8 +1,18 @@
-import { TreeProps, Group, Stack, Badge, Collapse, Box, Checkbox, Text } from '@mantine/core';
+import {
+  TreeProps,
+  Group,
+  Stack,
+  Badge,
+  Collapse,
+  Box,
+  Checkbox,
+  Text,
+  ActionIcon,
+} from '@mantine/core';
 import { IconChevronDown, IconChevronRight } from '@tabler/icons-react';
 import clsx from 'clsx';
 import { toMerged } from 'es-toolkit/object';
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useDiff, useDiffConfigEntry, useDiffStatusConfigEntry } from '../Diff.context';
 import { DiffStatus, DiffTreeNodeData } from '../Diff.types';
 
@@ -24,12 +34,21 @@ const DiffStatusBadge = ({ status }: { status: DiffStatus }) => {
 
 export const DiffTreeNode: NonNullable<TreeProps['renderNode']> = (props) => {
   const node = props.node as DiffTreeNodeData;
-  const { getStyles } = useDiff();
-  const configEntry = useDiffConfigEntry(node.nodeProps.type);
+  const { getStyles, readMode } = useDiff();
+  const { name: prefix, TablerIcon: IconLabel } = useDiffConfigEntry(node.nodeProps.type);
   const hasContent = !!node.nodeProps.content;
   const isExpandable = props.hasChildren || hasContent;
-  const isChecked = props.tree.isNodeChecked(node.value);
-  const isIndeterminate = props.tree.isNodeIndeterminate(node.value);
+
+  const { isChecked, isIndeterminate } = useMemo(() => {
+    const nodeStatus = props.tree
+      .getCheckedNodes()
+      .find((currNode) => currNode.value === node.value);
+
+    return {
+      isChecked: nodeStatus?.checked ?? false,
+      isIndeterminate: nodeStatus?.indeterminate ?? false,
+    };
+  }, [props.tree.getCheckedNodes, node.value]);
 
   const toggleExpanded = useCallback(
     () => props.tree.toggleExpanded(node.value),
@@ -48,6 +67,8 @@ export const DiffTreeNode: NonNullable<TreeProps['renderNode']> = (props) => {
   const className = clsx(nodeStyles.className, props.elementProps.className);
   const style = toMerged(nodeStyles.style, props.elementProps.style);
 
+  const IconChevron = props.expanded ? IconChevronDown : IconChevronRight;
+
   return (
     <Group
       {...props.elementProps}
@@ -57,30 +78,41 @@ export const DiffTreeNode: NonNullable<TreeProps['renderNode']> = (props) => {
     >
       <Stack {...getStyles('label')}>
         <Group>
-          {isExpandable &&
-            (props.expanded ? (
-              <IconChevronDown onClick={toggleExpanded} />
-            ) : (
-              <IconChevronRight onClick={toggleExpanded} />
-            ))}
-          {configEntry.TablerIcon && <configEntry.TablerIcon />}
-          <Text>{configEntry.name}</Text>
-          <Text fw={500}>"{node.nodeProps.name}"</Text>
+          {isExpandable && (
+            <ActionIcon
+              onClick={toggleExpanded}
+              variant="transparent"
+              {...getStyles('labelChevron')}
+            >
+              <IconChevron />
+            </ActionIcon>
+          )}
+          {IconLabel && <IconLabel {...getStyles('labelIcon')} />}
+          <Text fw={500} {...getStyles('labelTextPrefix')}>
+            {prefix}
+          </Text>
+          <Text fw={700} {...getStyles('labelText')}>
+            "{node.nodeProps.name}"
+          </Text>
           <DiffStatusBadge status={node.nodeProps.status} />
         </Group>
         {hasContent && (
           <Collapse transitionDuration={0} expanded={props.expanded}>
-            <Box pis="calc(var(--mantine-spacing-lg) * 2)">{node.nodeProps.content}</Box>
+            <Box pis="calc(var(--mantine-spacing-lg) * 2)" {...getStyles('labelContent')}>
+              {node.nodeProps.content}
+            </Box>
           </Collapse>
         )}
       </Stack>
-      <Checkbox
-        variant="outline"
-        checked={isChecked}
-        indeterminate={isIndeterminate}
-        onClick={toggleChecked}
-        {...getStyles('nodeCheckbox')}
-      />
+      {!readMode && (
+        <Checkbox
+          variant="outline"
+          checked={isChecked}
+          indeterminate={isIndeterminate}
+          onClick={toggleChecked}
+          {...getStyles('nodeCheckbox')}
+        />
+      )}
     </Group>
   );
 };

@@ -7,7 +7,7 @@ export const DiffApproveAllCheckbox = ({
   onClick,
   ...props
 }: Omit<CheckboxProps, 'checked'>) => {
-  const { diffNodesCount, tree } = useDiff();
+  const { diffNodesCount, tree, readMode } = useDiff();
 
   const isChecked = diffNodesCount === tree.getCheckedNodes().length;
 
@@ -20,5 +20,5 @@ export const DiffApproveAllCheckbox = ({
     [isChecked, tree.checkAllNodes, tree.uncheckAllNodes, onClick]
   ) satisfies CheckboxProps['onClick'];
 
-  return <Checkbox {...props} label={label} onClick={toggleAll} checked={isChecked} />;
+  return !readMode && <Checkbox {...props} label={label} onClick={toggleAll} checked={isChecked} />;
 };

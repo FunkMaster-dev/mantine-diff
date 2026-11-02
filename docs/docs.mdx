@@ -5,6 +5,34 @@ import * as demos from './demos';
 
 <InstallScript packages="@funkmaster/mantine-diff" />
 
-## Diff demo
+After installation import package styles at the root of your application:
 
-<Demo data={demos.diffUsage} />
+```tsx
+import '@funkmaster/mantine-diff/styles.css';
+```
+
+You can import styles within a layer `@layer mantine-diff` by importing `@funkmaster/mantine-diff/styles.layer.css` file.
+
+```tsx
+import '@funkmaster/mantine-diff/styles.layer.css';
+```
+
+## Usage
+
+<Demo data={demos.usage} />
+
+## Read mode
+
+The `readMode` prop turns off all of the component's write logics
+
+<Demo data={demos.readMode} />
+
+> **Note:** The following components are disabled at `readMode`:
+>
+> - `<Diff.Counter />`
+> - `<Diff.ApproveAllCheckbox />` 
+> - `<Diff.ApplyChangesButton />`
+>
+> They will not render any elements to the page
+> 
+

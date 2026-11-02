@@ -1,14 +1,21 @@
 {
   "name": "@funkmaster/mantine-diff",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Diff component for mantine",
   "homepage": "https://funkmaster-dev.github.io/mantine-diff/",
   "packageManager": "yarn@4.18.1",
   "license": "MIT",
   "author": "Boaz Geller",
   "keywords": [
+    "mantine",
+    "mantine-ui",
+    "mantine-v9",
+    "react",
+    "react-component",
+    "typescript",
     "extension",
-    "mantine"
+    "component",
+    "diff"
   ],
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.mjs",
